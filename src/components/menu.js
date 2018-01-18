@@ -16,7 +16,7 @@ class Menu extends React.Component{
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <Link to='/record' class="nav-link">Ewidencja<span class="sr-only">(current)</span></Link>
+        <Link to='/scoutsList' class="nav-link">Ewidencja<span class="sr-only">(current)</span></Link>
       </li>
       <li class="nav-item">
         <Link to='/eventsList' class="nav-link">Wydarzenia</Link>

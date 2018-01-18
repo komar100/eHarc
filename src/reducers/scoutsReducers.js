@@ -8,6 +8,9 @@ export function scoutsReducers(state={
     case "GET_SCOUTS":
       return {...state, scouts:[...action.payload]}
     break;
+    case "GET_SCOUTS_ID":
+      return {...state, scouts:action.payload}
+    break;
     case "POST_SCOUT":
       return {...state, scouts:[...state.scouts, ...action.payload], msg:'Saved! Click to continue', style:'success', validation:'success'}
     break;
@@ -24,7 +27,7 @@ export function scoutsReducers(state={
       const currentScoutToDelete = [...state.scouts]
       const indexToDelete = currentScoutToDelete.findIndex(
         function(scout){
-          return scout._id == action.payload;
+          return scout._id == action.payload._id;
         }
       )
 
@@ -33,17 +36,8 @@ export function scoutsReducers(state={
 
     case "UPDATE_SCOUT":
     const currentScoutToUpdate = [...state.scouts]
-    const indexToUpdate = currentScoutToUpdate.findIndex(
-      function(scout){
-        return scout._id === action.payload._id;
-      }
-    )
-      const newScoutToUpdate = {
-      ...currentScoutToUpdate[indexToUpdate],
-      title: action.payload.title
-    }
-    console.log("what is it newScoutToUpdate", newScoutToUpdate);
-    return {scouts: [...currentScoutToUpdate.slice(0, indexToUpdate), newScoutToUpdate, ...currentScoutToUpdate.slice(indexToUpdate + 1)]}
+    const newScoutToUpdate = action.payload;
+    return {scouts: [...currentScoutToUpdate.slice(0, 0), newScoutToUpdate, ...currentScoutToUpdate.slice(0 + 1)]}
     break;
   }
   return state;

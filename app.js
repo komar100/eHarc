@@ -2,7 +2,12 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var flash = require('connect-flash');
 
 var app = express();
 
@@ -15,10 +20,35 @@ app.use('/api', function(req, res){
   apiProxy.web(req, res);
 })
 // END PROXY
+//=========>MONGO<=============
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://127.0.0.1/eHarcDB';
+mongoose.connect(mongoDB, {
+  useMongoClient: true
+});
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+//==========>SESSION<==============
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
 
+require('./config/passport')(passport);
+app.use(logger('dev'));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+require('./routes/index.js')(app, passport);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 
 app.use(express.static(path.join(__dirname, 'public')));

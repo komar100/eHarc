@@ -43,6 +43,7 @@ render(){
       				<th>Data zakończenia</th>
               <th>Miejsce</th>
       				<th>Szczegóły</th>
+              <th>Usuń</th>
 			      </tr>
 		      </thead>
           <tbody>

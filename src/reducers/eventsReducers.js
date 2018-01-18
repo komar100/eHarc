@@ -6,6 +6,10 @@ export function eventsReducers(state={events: []}, action) {
         return{...state,
           events:action.payload
         }
+        break;
+        case "GET_EVENT_ID":
+          return {...state, events:action.payload}
+        break;
         case "POST_EVENT":
           return {...state,
             events:[...state.events, ...action.payload],}
@@ -16,11 +20,21 @@ export function eventsReducers(state={events: []}, action) {
              events:action.payload
            }
            break;
-    case "UPDATE_EVENT":
+           case "DELETE_EVENT":
+             const currentEventToDelete = [...state.events]
+             const indexToDelete = currentEventToDelete.findIndex(
+               function(event){
+                 return event._id == action.payload;
+               }
+             )
 
-    return {...state,
-      events:action.payload
-    }
+             return {events: [...currentEventToDelete.slice(0, indexToDelete), ...currentEventToDelete.slice(indexToDelete + 1)]}
+           break;
+           case "UPDATE_EVENT":
+           const currentEventToUpdate = [...state.events]
+           const newEventToUpdate = action.payload;
+           return {events: [...currentEventToUpdate.slice(0, 0), newEventToUpdate, ...currentEventToUpdate.slice(0 + 1)]}
+           break;
     break;
     case "DELETE_EVENT_ITEM":
     return {...state,

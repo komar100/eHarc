@@ -13,6 +13,18 @@ export function getEvents(){
      })
   }
 }
+// GET ID
+export function getEventsId(_id){
+  return function(dispatch){
+    axios.get("/api/events/" + _id)
+      .then(function(response){
+        dispatch({type:"GET_EVENT_ID", payload:response.data})
+      })
+      .catch(function(err){
+        dispatch({type:"GET_EVENT_REJECTED", payload: err.message})
+      })
+  }
+}
 // POST
 export function postEvents(event){
   return function(dispatch){
@@ -29,7 +41,7 @@ export function postEvents(event){
 // ADD
 export function addToEvent(scout){
   return function(dispatch){
-    axios.post("/api/Event", scout)
+    axios.post("/api/events", scout)
       .then(function(response){
         dispatch({type:"ADD_TO_EVENT", payload:response.data})
       })
@@ -37,6 +49,32 @@ export function addToEvent(scout){
         dispatch({type:"ADD_TO_EVENT_REJECTED", msg: 'error when adding to the cart'})
       })
   }
+}
+// DELETE A EVENT
+export function deleteEvents(id){
+  return function(dispatch){
+    axios.delete("/api/events/" + id)
+      .then(function(response){
+        dispatch({type:"DELETE_EVENT", payload:id})
+      })
+      .catch(function(err){
+        dispatch({type:"DELETE_EVENT_REJECTED", payload:err})
+      })
+  }
+}
+
+// UPDATE
+export function updateEvents(event,id){
+  return function(dispatch){
+    axios.put("/api/events/" + id ,  event)
+      .then(function(response){
+        dispatch({type:"UPDATE_EVENT", payload: event})
+      })
+      .catch(function(err){
+        dispatch({type:"UPDATE_EVENT_REJECTED", payload: err.message})
+      })
+  }
+
 }
 // UPDATE
 

@@ -21,7 +21,6 @@ class record extends React.Component {
 
   render() {
     return (
-      <Router>
       <div class='container col-sm-12 col-md-10 col-lg-10 form_container'>
 
         <div class="row">
@@ -39,14 +38,10 @@ class record extends React.Component {
 
           </div>
           <div class='col-sm-12 c   ol-md-9 col-lg-9  scout_form'>
-          <Switch>
-            <Route path='/record/scoutsList' component={scoutsList} />
-            <Route path='/record/teamsList' component={teamsList} />
-          </Switch>
+
         </div>
       </div>
     </div>
-  </Router>
     )
   }
 }

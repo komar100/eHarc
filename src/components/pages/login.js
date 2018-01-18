@@ -10,15 +10,15 @@ class Login extends React.Component{
   render(){
     return(
       <div class="loginForm  col-md-5">
-      <Form>
+      <form  action='/login' method='post'>
         <h2>Zaloguj się</h2>
         <FormGroup>
           <Label for="email">Email</Label>
-          <Input type="email" name="Email" id="email" />
+          <Input type="email" name="email"  id="email" />
         </FormGroup>
         <FormGroup>
           <Label for="password">Hasło</Label>
-          <Input type="password" name="pass" id="pass" />
+          <Input type="password" name="password" id="password" />
         </FormGroup>
         <FormGroup check>
           <Label check>
@@ -26,8 +26,8 @@ class Login extends React.Component{
             Zapamiętaj mnie
           </Label>
         </FormGroup>
-        <Button>Zaloguj się</Button>
-      </Form>
+        <Button type='submit'>Zaloguj się</Button>
+      </form>
     </div>
     )
   }

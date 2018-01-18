@@ -41,6 +41,7 @@ render(){
       				<th>Nazwisko</th>
       				<th>Załoga</th>
       				<th>Szczegóły</th>
+              <th>Usuń</th>
 			      </tr>
 		      </thead>
           <tbody>

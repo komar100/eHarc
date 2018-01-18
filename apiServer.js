@@ -1,8 +1,14 @@
 'use strict'
 var express = require('express');
 var path = require('path');
+var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var flash = require('connect-flash');
+const fileUpload = require('express-fileupload');
 
 
 
@@ -10,11 +16,11 @@ var app = express();
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // view engine setup
@@ -23,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //API
 
-//=========>MONGO<=============
+// //=========>MONGO<=============
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://127.0.0.1/eHarcDB';
 mongoose.connect(mongoDB, {
@@ -32,6 +38,30 @@ mongoose.connect(mongoDB, {
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+//FILE UPLOAD
+app.use(fileUpload());
+
+app.post('/upload', function(req, res) {
+  if (!req.files)
+    return res.status(400).send('No files were uploaded.');
+
+  let file = req.files.file;
+
+  file.mv('./public/plan.jpg', function(err) {
+    if (err)
+      return res.status(500).send(err);
+
+    res.send('File uploaded!');
+  });
+});
+
 
 
 //============>SCOUTS<===========
@@ -60,11 +90,38 @@ app.get('/scouts', function(req,res){
   console.log('get działa');
 });
 
+//GET ID
+app.get('/scouts/:_id', function(req,res){
+  var query= {_id:req.params._id}
+  Scouts.find(query, function(err, scouts){
+    if(err){
+      throw err;
+    }
+    res.json(scouts)
+  })
+  console.log('get działa');
+});
+
+
+
 //DELETE
 app.delete('/scouts/:_id',function(req,res){
-  var query = {_id:req.params._id};
+  var query1 = {_id:req.params._id};
 
-  Scouts.remove(query,function(err,scouts){
+  Scouts.remove(query1,function(err,scouts){
+    if(err){
+      throw err;
+    }
+    res.json(scouts);
+  })
+});
+//UPDATE
+app.put('/scouts/:_id', function(req, res) {
+  var scout = req.body[0];
+  var query = req.params._id;
+
+
+  Scouts.findOneAndUpdate(query, { $set: scout},{ overwrite: true }, function(err,scouts){
     if(err){
       throw err;
     }
@@ -72,18 +129,6 @@ app.delete('/scouts/:_id',function(req,res){
   })
 });
 //==============>TEAMS<=============
-//POST
-var Teams = require('./models/teams.js');
-app.post('/teams', function(req, res){
-  var team = req.body;
-  Teams.create(team, function(err, teams){
-    if(err){
-      throw err;
-    }
-    res.json(teams);
-  })
-  console.log('no chyba działa');
-});
 
 //GET
 app.get('/teams', function(req,res){
@@ -99,10 +144,11 @@ app.get('/teams', function(req,res){
 
 //==============>EVENTS<=============
 //POST
+
 var Events = require('./models/events.js');
 app.post('/events', function(req, res){
   var event = req.body;
-  Teams.create(event, function(err, events){
+  Events.create(event, function(err, events){
     if(err){
       throw err;
     }
@@ -121,6 +167,44 @@ app.get('/events', function(req,res){
     res.json(events)
   })
   console.log('get działa');
+});
+
+//GET ID
+app.get('/events/:_id', function(req,res){
+  var query= {_id:req.params._id}
+  Events.find(query, function(err, events){
+    if(err){
+      throw err;
+    }
+    res.json(events)
+  })
+  console.log('get działa');
+});
+
+//DELETE
+app.delete('/events/:_id',function(req,res){
+  var query = {_id:req.params._id};
+
+  Events.remove(query,function(err,events){
+    if(err){
+      throw err;
+    }
+    res.json(events);
+  })
+});
+
+//UPDATE
+app.put('/events/:_id', function(req, res) {
+  var event = req.body[0];
+  var query = req.params._id;
+
+
+  Events.findByIdAndUpdate(query, { $set: event}, {new: true}, function(err,events){
+    if(err){
+      throw err;
+    }
+    res.json(events);
+  })
 });
 //API END
 

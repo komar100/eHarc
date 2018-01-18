@@ -5,8 +5,16 @@ import {connect} from 'react-redux';
 import {postEvents} from '../../actions/eventsActions.js';
 import {bindActionCreators} from 'redux';
 import {findDOMNode} from 'react-dom';
+import {
+    withRouter
+} from 'react-router-dom';
 
 class eventForm extends React.Component {
+
+  submitForm (e) {
+        e.preventDefault()
+        this.props.history.push('/eventsList');
+    }
 
   handleSubmit(){
     const event = [{
@@ -20,7 +28,7 @@ class eventForm extends React.Component {
 
   render() {
     return (
-      <div class='container col-sm-12 col-md-10 col-lg-10 form_container'>
+      <form onSubmit={this.submitForm.bind(this)} class='container col-sm-12 col-md-10 col-lg-10 form_container'>
 
               <div class="row form_name">
                 <h2>Dane wydarzenia</h2>
@@ -34,14 +42,14 @@ class eventForm extends React.Component {
                 <div class="form-group row">
                   <label for="start" class="col-2 col-form-label">Data rozpoczęcia</label>
                   <div class="col-4">
-                    <input class="form-control" type="text" ref="start"  id="start"></input>
+                    <input class="form-control" type="date" ref="start"  id="start"></input>
                   </div>
                 </div>
             <div class="form-group row ">
 
                 <label for="finish" class="col-2 col-form-label">Data zakończenia</label>
                 <div class="col-4">
-                  <input class="form-control" type="text" ref="finish"  id="finish"></input>
+                  <input class="form-control" type="date" ref="finish"  id="finish"></input>
                 </div>
               </div>
               <div class="form-group row ">
@@ -52,7 +60,7 @@ class eventForm extends React.Component {
           </div>
             <button onClick={this.handleSubmit.bind(this)} type="submit" class="btn btn-primary">Zapisz</button>
 
-        </div>
+        </form>
     )
   }
 }
@@ -63,5 +71,5 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(eventForm);
+export default withRouter(connect(null, mapDispatchToProps)(eventForm));
 //export default mainForm;

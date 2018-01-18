@@ -1,8 +1,58 @@
 "use strict"
 import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import { Button} from 'reactstrap';
+import {Link} from 'react-router-dom';
+import {deleteScouts} from '../../actions/scoutsActions';
+import Modal from 'react-modal';
+
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 
 class ScoutItem extends React.Component {
+
+
+  handleSubmit(){
+    const _id = this.props._id;
+    this.props.deleteScouts(_id);
+    this.setState({modalIsOpen: false});
+  }
+  constructor() {
+    super();
+
+    this.state = {
+      modalIsOpen: false
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
 
   render(){
     return(
@@ -11,9 +61,32 @@ class ScoutItem extends React.Component {
         <td>{this.props.name}</td>
         <td>{this.props.surname}</td>
         <td>{this.props.team}</td>
-        <td><Button>Szczegóły</Button></td>
-      </tr>
+        <td><Link to={'/scoutDetails/' + this.props._id}><Button>Szczegóły</Button></Link></td>
+        <td><Button onClick={this.openModal}>Usuń</Button></td>
+
+
+
+
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+        >
+
+          <h2 ref={subtitle => this.subtitle = subtitle}>Czy na pewno chcesz usunąc?</h2>
+
+          <Button onClick={this.handleSubmit.bind(this)}>Usuń</Button>
+          <Button onClick={this.closeModal}>Anuluj</Button>
+        </Modal>
+          </tr>
     )
   }
 }
-export default ScoutItem;
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    deleteScouts: deleteScouts
+  }, dispatch)
+}
+export default connect(null, mapDispatchToProps)(ScoutItem);

@@ -8,8 +8,7 @@ var eventsSchema = new Schema({
   start: { type: Date, default: Date.now },
   finish: { type: Date, default: Date.now },
   place: String,
-  // teams: [{ type: Schema.Types.ObjectId, ref: 'teamSchema' }],
-  // participants: [{ type: Schema.Types.ObjectId, ref: 'scoutsSchema' }],
+  participants: [{ type: Schema.Types.ObjectId, ref: 'Scouts' }],
 
 
 });
