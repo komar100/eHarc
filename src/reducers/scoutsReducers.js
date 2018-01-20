@@ -27,7 +27,7 @@ export function scoutsReducers(state={
       const currentScoutToDelete = [...state.scouts]
       const indexToDelete = currentScoutToDelete.findIndex(
         function(scout){
-          return scout._id == action.payload._id;
+          return scout._id == action.payload;
         }
       )
 

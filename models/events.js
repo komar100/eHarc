@@ -8,9 +8,7 @@ var eventsSchema = new Schema({
   start: { type: Date, default: Date.now },
   finish: { type: Date, default: Date.now },
   place: String,
-  participants: [{ type: Schema.Types.ObjectId, ref: 'Scouts' }],
-
-
+  participants: [{ type: Schema.Types.ObjectId, ref: 'Scouts'}],
 });
 
 var Events = mongoose.model('Events', eventsSchema);

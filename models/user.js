@@ -18,8 +18,6 @@ var UserSchema = mongoose.Schema({
     trim: true
   },
   boss: Boolean,
-  teamBoss: Boolean,
-
 });
 
 UserSchema.plugin(passportLocalMongoose);

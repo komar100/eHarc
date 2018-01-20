@@ -3,10 +3,12 @@ import React from 'react';
 import { Button} from 'reactstrap';
 import { connect } from 'react-redux';
 import {getEventsId} from '../../actions/eventsActions.js';
+import {getScoutsId} from '../../actions/scoutsActions.js';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import Modal from 'react-modal';
 import EventScouts from './eventScouts';
+import EventScoutItem from './eventScoutItem';
 
 const customStyles = {
   overlay : {
@@ -39,7 +41,9 @@ class EventDetails extends React.Component {
   componentDidMount(){
     this.props.getEventsId(this.props.match.params._id);
 
-  }  constructor() {
+  }
+
+  constructor() {
    super();
 
    this.state = {
@@ -53,6 +57,7 @@ class EventDetails extends React.Component {
 
  openModal() {
    this.setState({modalIsOpen: true});
+
  }
 
  afterOpenModal() {
@@ -67,6 +72,15 @@ class EventDetails extends React.Component {
 
 
   render(){
+    const ev = this.props.events
+    const scoutsList= this.props.events.participants.map(function(scoutsArr){
+      return(
+              <EventScoutItem
+                event = {ev}
+                _id={scoutsArr}
+              />
+      )
+    })
     return(
       <div class='container col-sm-12 col-md-10 col-lg-10 scouts_container'>
         <div class='row'>
@@ -76,7 +90,7 @@ class EventDetails extends React.Component {
         <Link to={'/eventEditForm/' + this.props.events._id}><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Edytuj dane</button></Link>
         <form ref='uploadForm'
           id='uploadForm'
-          action='/api/upload' 
+          action='/api/upload'
           method='post'
           encType="multipart/form-data">
         <input type="file" name="file" />
@@ -96,10 +110,11 @@ class EventDetails extends React.Component {
         				<th>Imię</th>
         				<th>Nazwisko</th>
         				<th>Załoga</th>
-        				<th>usuń</th>
+        				<th>Usuń</th>
   			      </tr>
   		      </thead>
             <tbody>
+              {scoutsList}
             </tbody>
           </table>
         </div>
@@ -113,7 +128,9 @@ class EventDetails extends React.Component {
 
           <h2 ref={subtitle => this.subtitle = subtitle}>Dodaj uczestnika</h2>
           <button class="btn btn-outline-success my-2 my-sm-0" onClick={this.closeModal}>Zamknij</button>
-        <EventScouts />
+        <EventScouts
+              eventId = {this.props.match.params._id}
+        />
         </Modal>
       </div>
     )
@@ -128,7 +145,8 @@ function mapStateToProps(state,ownProps){
 }
 function mapDispatchToProps(dispatch){
   return bindActionCreators({
-    getEventsId:getEventsId
+    getEventsId:getEventsId,
+    getScoutsId:getScoutsId
   }, dispatch)
 }
 

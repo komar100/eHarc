@@ -39,16 +39,20 @@ export function postEvents(event){
 }
 
 // ADD
-export function addToEvent(scout){
+export function addToEvent(scoutId, eventId, event){
   return function(dispatch){
-    axios.post("/api/events", scout)
+    axios.put("/api/eventsAdd/"+ scoutId, event)
       .then(function(response){
-        dispatch({type:"ADD_TO_EVENT", payload:response.data})
+        dispatch({type:"ADD_TO_EVENT", payload:scoutId})
       })
       .catch(function(err){
-        dispatch({type:"ADD_TO_EVENT_REJECTED", msg: 'error when adding to the cart'})
+        dispatch({type:"ADD_TO_EVENT_REJECTED", msg: err.message})
       })
   }
+  // return {
+  //         type:"ADD_TO_EVENT",
+  //         payload: scoutId
+  //       }
 }
 // DELETE A EVENT
 export function deleteEvents(id){
@@ -64,11 +68,11 @@ export function deleteEvents(id){
 }
 
 // UPDATE
-export function updateEvents(event,id){
+export function updateEvents(event,scoutId){
   return function(dispatch){
-    axios.put("/api/events/" + id ,  event)
+    axios.put("/api/events/" ,  event)
       .then(function(response){
-        dispatch({type:"UPDATE_EVENT", payload: event})
+        dispatch({type:"UPDATE_EVENT", payload: scoutId})
       })
       .catch(function(err){
         dispatch({type:"UPDATE_EVENT_REJECTED", payload: err.message})
@@ -76,42 +80,16 @@ export function updateEvents(event,id){
   }
 
 }
-// UPDATE
 
-export function updateEvent(_id, unit, event){
-  const currentScoutToUpdate = event
-  const indexToUpdate = currentScoutToUpdate.findIndex(
-    function(scout){
-      return scout._id === _id;
-    }
-  )
-
-  const newScoutToUpdate = {
-    ...currentScoutToUpdate[indexToUpdate],
-    quantity: currentScoutToUpdate[indexToUpdate].quantity + unit
-  }
-
-  let eventUpdate = [...currentScoutToUpdate.slice(0, indexToUpdate), newScoutToUpdate, ...currentScoutToUpdate.slice(indexToUpdate + 1)]
-
-  return function(dispatch){
-    axios.post("/api/event", eventUpdate)
-      .then(function(response){
-        dispatch({type:"UPDATE_EVENT", payload:response.data})
-      })
-      .catch(function(err){
-        dispatch({type:"UPDATE_EVENT_REJECTED", msg: 'error when adding to the cart'})
-      })
-  }
-}
 // DELETE
-export function deleteEventItem(scout){
+export function deleteEventItem(scoutId,event){
   return function(dispatch){
-    axios.post("/api/events", scout)
+    axios.put("/api/eventsDel/"+ scoutId, event)
       .then(function(response){
-        dispatch({type:"DELETE_EVENT_ITEM", payload:response.data})
+        dispatch({type:"DELETE_EVENT_ITEM", payload: scoutId})
       })
       .catch(function(err){
         dispatch({type:"DELETE_EVENT_ITEM_REJECTED", msg: 'error when deleting an item from '})
       })
-  }
+    }
 }

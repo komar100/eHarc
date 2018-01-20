@@ -16,7 +16,6 @@ var Scouts = mongoose.Schema({
   parentTel: Number,
   mail: String,
   team: String
-
 });
 
 var Scouts= mongoose.model('Scouts',Scouts );

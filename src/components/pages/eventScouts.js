@@ -9,20 +9,22 @@ import {Link} from 'react-router-dom';
 
 
 
- class ScoutsList extends React.Component{
+ class EventScouts extends React.Component{
     componentDidMount(){
       this.props.getScouts();
     }
 
 render(){
-
+  const event= this.props.eventId
   const scoutsList= this.props.scouts.map(function(scoutsArr){
     return(
-            <ScoutEventItem
-              _id={scoutsArr._id}
-              name={scoutsArr.name}
-              surname={scoutsArr.surname}
-            />
+      <ScoutEventItem
+        eventId= {event}
+        _id={scoutsArr._id}
+        name={scoutsArr.name}
+        surname={scoutsArr.surname}
+        team={scoutsArr.team}
+      />
     )
   })
   return(
@@ -61,4 +63,4 @@ function mapDispatchToProps(dispatch){
   }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScoutsList);
+export default connect(mapStateToProps, mapDispatchToProps)(EventScouts);

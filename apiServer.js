@@ -206,6 +206,45 @@ app.put('/events/:_id', function(req, res) {
     res.json(events);
   })
 });
+
+app.put('/eventsAdd/:_id', function(req, res) {
+  var event = req.body;
+  var query = req.body._id;
+
+  var update={
+    '$set': {
+      participants: [...event.participants, req.params._id]
+    }
+  }
+  console.log(query,event)
+  Events.findByIdAndUpdate(query, update, {new: true}, function(err,events){
+    if(err){
+      throw err;
+    }
+    res.json(events);
+  })
+res.json(event);
+});
+
+app.put('/eventsDel/:_id', function(req, res) {
+  var event = req.body;
+  var query = req.body._id
+  var i = event[0].participants.findIndex(req.body._id)
+
+  var update={
+    '$set': {
+      participants: event[0].participants.slice(i, 1)
+    }
+  }
+  console.log(query,event)
+  Events.findByIdAndUpdate(query, update, {new: true}, function(err,events){
+    if(err){
+      throw err;
+    }
+    res.json(events);
+  })
+res.json(event);
+});
 //API END
 
 

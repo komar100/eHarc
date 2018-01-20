@@ -11,11 +11,12 @@ import {
     withRouter
 } from 'react-router-dom';
 
-class mainForm extends React.Component {
+class ScoutEditForm extends React.Component {
 
 
   componentDidMount(){
     this.props.getScoutsId(this.props.match.params._id);
+    console.log(this.props)
 
   }
   submitForm (e) {
@@ -138,11 +139,10 @@ class mainForm extends React.Component {
     )
   }
 }
-function mapStateToProps(state,ownProps){
 
+function mapStateToProps(state,ownProps){
   return{
     scouts: state.scouts.scouts[0]
-
   }
 }
 function mapDispatchToProps(dispatch) {
@@ -152,5 +152,5 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(mainForm));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ScoutEditForm));
 //export default mainForm;
