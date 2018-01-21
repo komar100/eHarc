@@ -30,7 +30,7 @@ render(){
     <div class='container col-sm-12 col-md-10 col-lg-10 scouts_container'>
       <div class='table_heading'>
           <h1>Lista członków</h1>
-          <Link to='/addScout'><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Dodaj członka</button></Link>
+          <Link to='/addScout' class="przycisk"><button class="btn btn-primary my-2 my-sm-0" type="submit">Dodaj członka</button></Link>
       </div>
       <div class='table-responsive'>
         <table class='table table-hover table-striped '>

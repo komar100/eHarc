@@ -45,14 +45,12 @@ table {
 .main-container{
 }
 .header {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
 }
 .menu{
 
-  color: #FFFFFF;
-  z-index: 2;
+	    position: fixed;
+	    z-index: 1;
+	    width: 100%;
 }
 
 .menu *{
@@ -79,32 +77,84 @@ table {
     color: #FFFFFF;
     z-index: 2;
 }
-.footer-texr{
-}
+
 .loginForm{
-  width: 40%;
   hight: 300px;
   background-color: #FFFFFF;
   margin: 0 auto;
-  top:50px;
+  top:90px;
+	vertical-align:middle;
+}
+
+.loginForm h2{
+		padding: 10px;
+	 text-align: center;
+}
+.zaloguj{
+	text-align: center;
+}
+.zaloguj button{
+	margin: 10px;
 }
 
 .scouts_container, .events_container, .form_container{
 	position: relative;
 	background-color:#FFFFFF;
 	top: 100px;
-
+}
+.scouts_container, .events_container, .form_container h2,h3{
+	padding: 10px;
+	height: auto;
+}
+.form_container{
+}
+.przycisk{
+	position: absolute;
+	right: 50px;
+	top: 5px;
+	margin: 20px;
 }
 
 .table{
 	margin-top: 40px;
+}
+table {
+    counter-reset: rowNumber;
+		text-align: center;
+}
+table thead tr th{
+	text-align: center;
+}
 
+table tbody tr {
+    counter-increment: rowNumber;
 }
-.form_container{
+
+table tbody tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
 }
+
 
 .form_menu{
 	background-color: rgb(43, 32, 223);
 	padding: 0;
 	margin: 0;
+}
+
+.zapisz{
+	float: right;
+	margin: 20px;
+}
+p{
+	margin-left: 10px;
+}
+.modalButton{
+	margin: 10px;
+}
+.dodaj{
+	position: absolute;
+	right: 50px;
+	margin: 20px;
 }

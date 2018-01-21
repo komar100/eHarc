@@ -10783,10 +10783,10 @@ var ScoutsList = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/addScout' },
+            { to: '/addScout', 'class': 'przycisk' },
             _react2.default.createElement(
               'button',
-              { 'class': 'btn btn-outline-success my-2 my-sm-0', type: 'submit' },
+              { 'class': 'btn btn-primary my-2 my-sm-0', type: 'submit' },
               'Dodaj cz\u0142onka'
             )
           )
@@ -11627,7 +11627,7 @@ var Login = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { 'class': 'loginForm  col-md-5' },
+        { 'class': 'loginForm  col-md-4' },
         _react2.default.createElement(
           'form',
           { action: '/login', method: 'post' },
@@ -11657,20 +11657,13 @@ var Login = function (_React$Component) {
             _react2.default.createElement(_reactstrap.Input, { type: 'password', name: 'password', id: 'password' })
           ),
           _react2.default.createElement(
-            _reactstrap.FormGroup,
-            { check: true },
+            'div',
+            { 'class': 'zaloguj ' },
             _react2.default.createElement(
-              _reactstrap.Label,
-              { check: true },
-              _react2.default.createElement(_reactstrap.Input, { type: 'checkbox' }),
-              ' ',
-              'Zapami\u0119taj mnie'
+              _reactstrap.Button,
+              { type: 'submit' },
+              'Zaloguj si\u0119'
             )
-          ),
-          _react2.default.createElement(
-            _reactstrap.Button,
-            { type: 'submit' },
-            'Zaloguj si\u0119'
           )
         )
       );
@@ -35205,8 +35198,8 @@ var ScoutItem = function (_React$Component) {
             _reactRouterDom.Link,
             { to: '/scoutDetails/' + this.props._id },
             _react2.default.createElement(
-              _reactstrap.Button,
-              null,
+              'button',
+              { 'class': 'btn btn-primary my-2 my-sm-0' },
               'Szczeg\xF3\u0142y'
             )
           )
@@ -35215,8 +35208,8 @@ var ScoutItem = function (_React$Component) {
           'td',
           null,
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.openModal },
+            'button',
+            { 'class': 'btn btn-danger my-2 my-sm-0', onClick: this.openModal },
             'Usu\u0144'
           )
         ),
@@ -35236,13 +35229,13 @@ var ScoutItem = function (_React$Component) {
             'Czy na pewno chcesz usun\u0105c?'
           ),
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.handleSubmit.bind(this) },
+            'button',
+            { 'class': 'modalButton btn btn-danger my-2 my-sm-0', onClick: this.handleSubmit.bind(this) },
             'Usu\u0144'
           ),
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.closeModal },
+            'button',
+            { 'class': 'modalButton btn btn-primary my-2 my-sm-0', onClick: this.closeModal },
             'Anuluj'
           )
         )
@@ -42661,7 +42654,7 @@ var Menu = function (_React$Component) {
             { 'class': 'navbar-nav mr-auto' },
             _react2.default.createElement(
               'li',
-              { 'class': 'nav-item active' },
+              { 'class': 'nav-item ' },
               _react2.default.createElement(
                 _reactRouterDom.Link,
                 { to: '/scoutsList', 'class': 'nav-link' },
@@ -42681,16 +42674,6 @@ var Menu = function (_React$Component) {
                 { to: '/eventsList', 'class': 'nav-link' },
                 'Wydarzenia'
               )
-            )
-          ),
-          _react2.default.createElement(
-            'form',
-            { 'class': 'form-inline my-2 my-lg-0' },
-            _react2.default.createElement('input', { 'class': 'form-control mr-sm-2', type: 'text', placeholder: 'Search' }),
-            _react2.default.createElement(
-              'button',
-              { 'class': 'btn btn-outline-success my-2 my-sm-0', type: 'submit' },
-              'Search'
             )
           )
         )
@@ -42832,10 +42815,10 @@ var EventsList = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/addEvent' },
+            { to: '/addEvent', 'class': 'przycisk' },
             _react2.default.createElement(
               'button',
-              { 'class': 'btn btn-outline-success my-2 my-sm-0', type: 'submit' },
+              { 'class': 'btn btn-primary my-2 my-sm-0', type: 'submit' },
               'Dodaj wydarzenie'
             )
           )
@@ -43045,8 +43028,8 @@ var EventItem = function (_React$Component) {
             _reactRouterDom.Link,
             { to: '/eventDetails/' + this.props._id },
             _react2.default.createElement(
-              _reactstrap.Button,
-              null,
+              'button',
+              { 'class': 'btn btn-primary my-2 my-sm-0' },
               'Szczeg\xF3\u0142y'
             )
           )
@@ -43055,8 +43038,8 @@ var EventItem = function (_React$Component) {
           'td',
           null,
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.openModal },
+            'button',
+            { 'class': 'btn btn-danger my-2 my-sm-0', onClick: this.openModal },
             'Usu\u0144'
           )
         ),
@@ -43076,13 +43059,13 @@ var EventItem = function (_React$Component) {
             'Czy na pewno chcesz usun\u0105c?'
           ),
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.handleSubmit.bind(this) },
+            'button',
+            { 'class': 'modalButton btn btn-danger my-2 my-sm-0', onClick: this.handleSubmit.bind(this) },
             'Usu\u0144'
           ),
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.closeModal },
+            'button',
+            { 'class': 'modalButton btn btn-primary my-2 my-sm-0', onClick: this.closeModal },
             'Anuluj'
           )
         )
@@ -43181,7 +43164,7 @@ var mainForm = function (_React$Component) {
           { 'class': 'row' },
           _react2.default.createElement(
             'form',
-            { onSubmit: this.submitForm.bind(this), 'class': 'col-sm-12 col-md-12 col-lg-12  scout_form' },
+            { onSubmit: this.submitForm.bind(this), 'class': 'col-sm-12 col-md-12 col-lg-12 ' },
             _react2.default.createElement(
               'div',
               null,
@@ -43199,22 +43182,22 @@ var mainForm = function (_React$Component) {
                 { 'class': 'form-group row' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'name', 'class': 'col-2 col-form-label' },
+                  { 'for': 'name', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Imi\u0119'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'name', id: 'name' })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'surname', 'class': 'col-2 col-form-label' },
+                  { 'for': 'surname', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Nazwisko'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'surname', id: 'surname' })
                 )
               ),
@@ -43223,22 +43206,22 @@ var mainForm = function (_React$Component) {
                 { 'class': 'form-group row' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'pesel', 'class': 'col-2 col-form-label' },
+                  { 'for': 'pesel', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Pesel'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'number', ref: 'pesel', id: 'pesel' })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'dateOfBirth', 'class': 'col-2 col-form-label' },
+                  { 'for': 'dateOfBirth', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Data urodzenia'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-3 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'dateOfBirth', id: 'dateOfBirth' })
                 )
               ),
@@ -43256,22 +43239,22 @@ var mainForm = function (_React$Component) {
                 { 'class': 'form-group row adress' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'street', 'class': 'col-2 col-form-label' },
+                  { 'for': 'street', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Ulica'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'street', id: 'street' })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'number', 'class': 'col-2 col-form-label' },
+                  { 'for': 'number', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Numer domu'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-2' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'number', ref: 'number', id: 'number' })
                 )
               ),
@@ -43280,22 +43263,22 @@ var mainForm = function (_React$Component) {
                 { 'class': 'form-group row adress' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'code', 'class': 'col-2 col-form-label' },
+                  { 'for': 'code', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Kod pocztowy'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'code', id: 'code' })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'city', 'class': 'col-2 col-form-label' },
+                  { 'for': 'city', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Miasto'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'city', id: 'city' })
                 )
               ),
@@ -43313,22 +43296,22 @@ var mainForm = function (_React$Component) {
                 { 'class': 'form-group row ' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'tel', 'class': 'col-2 col-form-label' },
+                  { 'for': 'tel', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Telefon'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'tel', ref: 'tel', id: 'tel' })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'parTel', 'class': 'col-2 col-form-label' },
+                  { 'for': 'parTel', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Telefon rodzica'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'tel', ref: 'partel', id: 'parTel' })
                 )
               ),
@@ -43337,22 +43320,22 @@ var mainForm = function (_React$Component) {
                 { 'class': 'form-group row ' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'mail', 'class': 'col-2 col-form-label' },
+                  { 'for': 'mail', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'E-mail'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'email', ref: 'mail', id: 'mail' })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'team', 'class': 'col-2 col-form-label' },
+                  { 'for': 'team', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Za\u0142oga'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-sm-10' },
                   _react2.default.createElement(
                     'select',
                     { 'class': 'form-control', id: 'team', ref: 'team' },
@@ -43382,7 +43365,7 @@ var mainForm = function (_React$Component) {
             ),
             _react2.default.createElement(
               'button',
-              { onClick: this.handleSubmit.bind(this), type: 'submit', 'class': 'btn btn-primary' },
+              { onClick: this.handleSubmit.bind(this), type: 'submit', 'class': ' zapisz btn btn-primary' },
               'Zapisz'
             )
           )
@@ -43468,77 +43451,85 @@ var eventForm = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'form',
-        { onSubmit: this.submitForm.bind(this), 'class': 'container col-sm-12 col-md-10 col-lg-10 form_container' },
+        'div',
+        { 'class': 'container col-sm-12 col-md-10 col-lg-10 form_container' },
         _react2.default.createElement(
           'div',
-          { 'class': 'row form_name' },
+          { 'class': 'row' },
           _react2.default.createElement(
-            'h2',
-            null,
-            'Dane wydarzenia'
+            'form',
+            { onSubmit: this.submitForm.bind(this), 'class': 'col-sm-12 col-md-12 col-lg-12 ' },
+            _react2.default.createElement(
+              'div',
+              { 'class': 'row form_name' },
+              _react2.default.createElement(
+                'h2',
+                null,
+                'Dane wydarzenia'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'form-group row' },
+              _react2.default.createElement(
+                'label',
+                { 'for': 'name', 'class': 'col-md-4 col-sm-10 col-form-label' },
+                'Nazwa'
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'col-md-7 col-sm-10' },
+                _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'name', id: 'name' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'form-group row' },
+              _react2.default.createElement(
+                'label',
+                { 'for': 'start', 'class': 'col-md-4 col-sm-10 col-form-label' },
+                'Data rozpocz\u0119cia'
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'col-md-7 col-sm-10' },
+                _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'start', id: 'start' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'form-group row ' },
+              _react2.default.createElement(
+                'label',
+                { 'for': 'finish', 'class': 'col-md-4 col-sm-10 col-form-label' },
+                'Data zako\u0144czenia'
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'col-md-7 col-sm-10' },
+                _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'finish', id: 'finish' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'form-group row ' },
+              _react2.default.createElement(
+                'label',
+                { 'for': 'place', 'class': 'col-md-4 col-sm-10 col-form-label' },
+                'Miejsce'
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'col-md-7 col-sm-10' },
+                _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'place', id: 'place' })
+              )
+            ),
+            _react2.default.createElement(
+              'button',
+              { onClick: this.handleSubmit.bind(this), type: 'submit', 'class': ' zapisz btn btn-primary' },
+              'Zapisz'
+            )
           )
-        ),
-        _react2.default.createElement(
-          'div',
-          { 'class': 'form-group row' },
-          _react2.default.createElement(
-            'label',
-            { 'for': 'name', 'class': 'col-2 col-form-label' },
-            'Nazwa'
-          ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'col-4' },
-            _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'name', id: 'name' })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { 'class': 'form-group row' },
-          _react2.default.createElement(
-            'label',
-            { 'for': 'start', 'class': 'col-2 col-form-label' },
-            'Data rozpocz\u0119cia'
-          ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'col-4' },
-            _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'start', id: 'start' })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { 'class': 'form-group row ' },
-          _react2.default.createElement(
-            'label',
-            { 'for': 'finish', 'class': 'col-2 col-form-label' },
-            'Data zako\u0144czenia'
-          ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'col-4' },
-            _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'finish', id: 'finish' })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { 'class': 'form-group row ' },
-          _react2.default.createElement(
-            'label',
-            { 'for': 'place', 'class': 'col-2 col-form-label' },
-            'Miejsce'
-          ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'col-4' },
-            _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'place', id: 'place' })
-          )
-        ),
-        _react2.default.createElement(
-          'button',
-          { onClick: this.handleSubmit.bind(this), type: 'submit', 'class': 'btn btn-primary' },
-          'Zapisz'
         )
       );
     }
@@ -43612,48 +43603,87 @@ var ScoutDetails = function (_React$Component) {
         'div',
         { 'class': 'container col-sm-12 col-md-10 col-lg-10 scouts_container' },
         _react2.default.createElement(
-          'h3',
-          null,
-          this.props.scouts.name
+          'div',
+          { 'class': 'row' },
+          _react2.default.createElement(
+            'div',
+            { 'class': 'col-md-5 col-sm-10' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              'Dane osobowe'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Imi\u0119: ',
+              this.props.scouts.name
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Nazwisko: ',
+              this.props.scouts.surname
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Pesel: ',
+              this.props.scouts.pesel
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Data urodzenia: ',
+              this.props.scouts.dateOfBirth
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { 'class': 'col-md-5 col-sm-10' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              'Adres zamieszkania'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Ul. ',
+              this.props.scouts.street,
+              ' ',
+              this.props.scouts.sNumber
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              this.props.scouts.code,
+              ' ',
+              this.props.scouts.city
+            )
+          )
         ),
         _react2.default.createElement(
           'h3',
           null,
-          this.props.scouts.surname
+          'Dane kontaktowe'
         ),
         _react2.default.createElement(
-          'h3',
+          'p',
           null,
-          this.props.scouts.street
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
-          this.props.scouts.sNumber
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
-          this.props.scouts.city
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
+          'Telefon: ',
           this.props.scouts.telNumber
         ),
         _react2.default.createElement(
-          'h3',
+          'p',
           null,
+          'Telefon rodzica: ',
           this.props.scouts.parentTel
         ),
         _react2.default.createElement(
-          'h3',
+          'p',
           null,
-          this.props.scouts.pesel
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
+          'E-mail: ',
           this.props.scouts.mail
         ),
         _react2.default.createElement(
@@ -43661,7 +43691,7 @@ var ScoutDetails = function (_React$Component) {
           { to: '/scoutEditForm/' + this.props.scouts._id },
           _react2.default.createElement(
             'button',
-            { 'class': 'btn btn-outline-success my-2 my-sm-0', type: 'submit' },
+            { 'class': 'btn btn-primary my-2 my-sm-0', type: 'submit' },
             'Edytuj dane'
           )
         )
@@ -43796,22 +43826,22 @@ var ScoutEditForm = function (_React$Component) {
                 { 'class': 'form-group row' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'name', 'class': 'col-2 col-form-label' },
+                  { 'for': 'name', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Imi\u0119'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'name', id: 'name', defaultValue: this.props.scouts.name })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'surname', 'class': 'col-2 col-form-label' },
+                  { 'for': 'surname', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Nazwisko'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'surname', id: 'surname', defaultValue: this.props.scouts.surname })
                 )
               ),
@@ -43820,22 +43850,22 @@ var ScoutEditForm = function (_React$Component) {
                 { 'class': 'form-group row' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'pesel', 'class': 'col-2 col-form-label' },
+                  { 'for': 'pesel', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Pesel'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'number', ref: 'pesel', id: 'pesel', defaultValue: this.props.scouts.pesel })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'dateOfBirth', 'class': 'col-2 col-form-label' },
+                  { 'for': 'dateOfBirth', 'class': 'col-2 col-sm-10 col-form-label' },
                   'Data urodzenia'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-3 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'dateOfBirth', id: 'dateOfBirth', defaultValue: this.props.scouts.dateOfBirth })
                 )
               ),
@@ -43853,22 +43883,22 @@ var ScoutEditForm = function (_React$Component) {
                 { 'class': 'form-group row adress' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'street', 'class': 'col-2 col-form-label' },
+                  { 'for': 'street', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Ulica'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'street', id: 'street', defaultValue: this.props.scouts.street })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'number', 'class': 'col-2 col-form-label' },
+                  { 'for': 'number', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Numer domu'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-2' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'number', ref: 'number', id: 'number', defaultValue: this.props.scouts.sNumber })
                 )
               ),
@@ -43877,22 +43907,22 @@ var ScoutEditForm = function (_React$Component) {
                 { 'class': 'form-group row adress' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'code', 'class': 'col-2 col-form-label' },
+                  { 'for': 'code', 'class': 'col-md-2 col-sm-102 col-form-label' },
                   'Kod pocztowy'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'code', id: 'code', defaultValue: this.props.scouts.code })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'city', 'class': 'col-2 col-form-label' },
+                  { 'for': 'city', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Miasto'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'city', id: 'city', defaultValue: this.props.scouts.city })
                 )
               ),
@@ -43910,22 +43940,22 @@ var ScoutEditForm = function (_React$Component) {
                 { 'class': 'form-group row ' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'tel', 'class': 'col-2 col-form-label' },
+                  { 'for': 'tel', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Telefon'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'tel', ref: 'tel', id: 'tel', defaultValue: this.props.scouts.telNumber })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'parTel', 'class': 'col-2 col-form-label' },
+                  { 'for': 'parTel', 'class': 'col-md-2 col-sm-102 col-form-label' },
                   'Telefon rodzica'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'tel', ref: 'partel', id: 'parTel', defaultValue: this.props.scouts.parentTel })
                 )
               ),
@@ -43934,22 +43964,22 @@ var ScoutEditForm = function (_React$Component) {
                 { 'class': 'form-group row ' },
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'mail', 'class': 'col-2 col-form-label' },
+                  { 'for': 'mail', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'E-mail'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement('input', { 'class': 'form-control', type: 'email', ref: 'mail', id: 'mail', defaultValue: this.props.scouts.mail })
                 ),
                 _react2.default.createElement(
                   'label',
-                  { 'for': 'team', 'class': 'col-2 col-form-label' },
+                  { 'for': 'team', 'class': 'col-md-2 col-sm-10 col-form-label' },
                   'Za\u0142oga'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'col-4' },
+                  { 'class': 'col-md-4 col-ms-10' },
                   _react2.default.createElement(
                     'select',
                     { 'class': 'form-control', id: 'team', ref: 'team' },
@@ -43979,7 +44009,7 @@ var ScoutEditForm = function (_React$Component) {
             ),
             _react2.default.createElement(
               'button',
-              { onClick: this.handleSubmit.bind(this), type: 'submit', 'class': 'btn btn-primary' },
+              { onClick: this.handleSubmit.bind(this), type: 'submit', 'class': ' zapisz btn btn-primary' },
               'Zapisz'
             )
           )
@@ -47341,36 +47371,31 @@ var EventDetails = function (_React$Component) {
         'div',
         { 'class': 'container col-sm-12 col-md-10 col-lg-10 scouts_container' },
         _react2.default.createElement(
-          'div',
-          { 'class': 'row' },
+          'h2',
+          null,
+          this.props.events.name
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Miejsce: ',
+          this.props.events.place
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Czas trwania: ',
+          this.props.events.start,
+          ' - ',
+          this.props.events.finish
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/eventEditForm/' + this.props.events._id },
           _react2.default.createElement(
-            'h3',
-            null,
-            this.props.events.name
-          ),
-          _react2.default.createElement(
-            'h3',
-            null,
-            this.props.events.place
-          ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/eventEditForm/' + this.props.events._id },
-            _react2.default.createElement(
-              'button',
-              { 'class': 'btn btn-outline-success my-2 my-sm-0', type: 'submit' },
-              'Edytuj dane'
-            )
-          ),
-          _react2.default.createElement(
-            'form',
-            { ref: 'uploadForm',
-              id: 'uploadForm',
-              action: '/api/upload',
-              method: 'post',
-              encType: 'multipart/form-data' },
-            _react2.default.createElement('input', { type: 'file', name: 'file' }),
-            _react2.default.createElement('input', { type: 'submit', value: 'Dodaj!' })
+            'button',
+            { 'class': 'przycisk btn btn-primary my-2 my-sm-0', type: 'submit' },
+            'Edytuj dane'
           )
         ),
         _react2.default.createElement(
@@ -47383,7 +47408,7 @@ var EventDetails = function (_React$Component) {
           ),
           _react2.default.createElement(
             'button',
-            { 'class': 'btn btn-outline-success my-2 my-sm-0', onClick: this.openModal },
+            { 'class': 'dodaj btn btn-primary my-2 my-sm-0', onClick: this.openModal },
             'Dodaj uczestnika'
           )
         ),
@@ -47852,8 +47877,8 @@ var EventScoutItem = function (_React$Component) {
           'td',
           null,
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.openModal },
+            'button',
+            { 'class': 'btn btn-danger my-2 my-sm-0', onClick: this.openModal },
             'Usu\u0144'
           )
         ),
@@ -47873,13 +47898,13 @@ var EventScoutItem = function (_React$Component) {
             'Czy na pewno chcesz usun\u0105c?'
           ),
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.handleSubmit.bind(this) },
+            'button',
+            { 'class': 'btn btn-danger my-2 my-sm-0', onClick: this.handleSubmit.bind(this) },
             'Usu\u0144'
           ),
           _react2.default.createElement(
-            _reactstrap.Button,
-            { onClick: this.closeModal },
+            'button',
+            { 'class': 'btn btn-primary my-2 my-sm-0', onClick: this.closeModal },
             'Anuluj'
           )
         )
@@ -47976,77 +48001,85 @@ var EventEditForm = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'form',
-        { onSubmit: this.submitForm.bind(this), 'class': 'container col-sm-12 col-md-10 col-lg-10 form_container' },
+        'div',
+        { 'class': 'container col-sm-12 col-md-10 col-lg-10 form_container' },
         _react2.default.createElement(
           'div',
-          { 'class': 'row form_name' },
+          { 'class': 'row' },
           _react2.default.createElement(
-            'h2',
-            null,
-            'Dane wydarzenia'
+            'form',
+            { onSubmit: this.submitForm.bind(this), 'class': 'col-sm-12 col-md-12 col-lg-12 ' },
+            _react2.default.createElement(
+              'div',
+              { 'class': 'row form_name' },
+              _react2.default.createElement(
+                'h2',
+                null,
+                'Dane wydarzenia'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'form-group row' },
+              _react2.default.createElement(
+                'label',
+                { 'for': 'name', 'class': 'col-md-4 col-sm-10 col-form-label' },
+                'Nazwa'
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'col-md-7 col-sm-10' },
+                _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'name', id: 'name', defaultValue: this.props.events.name })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'form-group row' },
+              _react2.default.createElement(
+                'label',
+                { 'for': 'start', 'class': 'col-md-4 col-sm-10 col-form-label' },
+                'Data rozpocz\u0119cia'
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'col-md-7 col-sm-10' },
+                _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'start', id: 'start', defaultValue: this.props.events.start })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'form-group row ' },
+              _react2.default.createElement(
+                'label',
+                { 'for': 'finish', 'class': 'col-md-4 col-sm-10 col-form-label' },
+                'Data zako\u0144czenia'
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'col-md-7 col-sm-10' },
+                _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'finish', id: 'finish', defaultValue: this.props.events.finish })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { 'class': 'form-group row ' },
+              _react2.default.createElement(
+                'label',
+                { 'for': 'place', 'class': 'col-md-4 col-sm-10 col-form-label' },
+                'Miejsce'
+              ),
+              _react2.default.createElement(
+                'div',
+                { 'class': 'col-md-7 col-sm-10' },
+                _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'place', id: 'place', defaultValue: this.props.events.place })
+              )
+            ),
+            _react2.default.createElement(
+              'button',
+              { onClick: this.handleSubmit.bind(this), type: 'submit', 'class': 'zapisz btn btn-primary' },
+              'Zapisz'
+            )
           )
-        ),
-        _react2.default.createElement(
-          'div',
-          { 'class': 'form-group row' },
-          _react2.default.createElement(
-            'label',
-            { 'for': 'name', 'class': 'col-2 col-form-label' },
-            'Nazwa'
-          ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'col-4' },
-            _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'name', id: 'name', defaultValue: this.props.events.name })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { 'class': 'form-group row' },
-          _react2.default.createElement(
-            'label',
-            { 'for': 'start', 'class': 'col-2 col-form-label' },
-            'Data rozpocz\u0119cia'
-          ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'col-4' },
-            _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'start', id: 'start', defaultValue: this.props.events.start })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { 'class': 'form-group row ' },
-          _react2.default.createElement(
-            'label',
-            { 'for': 'finish', 'class': 'col-2 col-form-label' },
-            'Data zako\u0144czenia'
-          ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'col-4' },
-            _react2.default.createElement('input', { 'class': 'form-control', type: 'date', ref: 'finish', id: 'finish', defaultValue: this.props.events.finish })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { 'class': 'form-group row ' },
-          _react2.default.createElement(
-            'label',
-            { 'for': 'place', 'class': 'col-2 col-form-label' },
-            'Miejsce'
-          ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'col-4' },
-            _react2.default.createElement('input', { 'class': 'form-control', type: 'text', ref: 'place', id: 'place', defaultValue: this.props.events.place })
-          )
-        ),
-        _react2.default.createElement(
-          'button',
-          { onClick: this.handleSubmit.bind(this), type: 'submit', 'class': 'btn btn-primary' },
-          'Zapisz'
         )
       );
     }

@@ -60,8 +60,8 @@ class EventItem extends React.Component {
       <td>{this.props.start}</td>
       <td>{this.props.finish}</td>
       <td>{this.props.place}</td>
-      <td><Link to={'/eventDetails/' + this.props._id}><Button>Szczegóły</Button></Link></td>
-      <td><Button onClick={this.openModal}>Usuń</Button></td>
+      <td><Link to={'/eventDetails/' + this.props._id}><button class='btn btn-primary my-2 my-sm-0'>Szczegóły</button></Link></td>
+      <td><button class='btn btn-danger my-2 my-sm-0' onClick={this.openModal}>Usuń</button></td>
 
 
 
@@ -75,8 +75,8 @@ class EventItem extends React.Component {
 
         <h2 ref={subtitle => this.subtitle = subtitle}>Czy na pewno chcesz usunąc?</h2>
 
-        <Button onClick={this.handleSubmit.bind(this)}>Usuń</Button>
-        <Button onClick={this.closeModal}>Anuluj</Button>
+        <button class='modalButton btn btn-danger my-2 my-sm-0' onClick={this.handleSubmit.bind(this)}>Usuń</button>
+        <button class='modalButton btn btn-primary my-2 my-sm-0' onClick={this.closeModal}>Anuluj</button>
       </Modal>
         </tr>
     )

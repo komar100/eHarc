@@ -31,7 +31,7 @@ render(){
     <div class='container col-sm-12 col-md-10 col-lg-10 events_container'>
       <div class='table_heading'>
           <h1>Wydarzenia</h1>
-          <Link to='/addEvent'><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Dodaj wydarzenie</button></Link>
+          <Link to='/addEvent' class='przycisk'><button class="btn btn-primary my-2 my-sm-0" type="submit">Dodaj wydarzenie</button></Link>
       </div>
       <div class='table-responsive'>
         <table class='table table-hover table-striped '>

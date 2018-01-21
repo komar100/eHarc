@@ -9,7 +9,7 @@ class Login extends React.Component{
 
   render(){
     return(
-      <div class="loginForm  col-md-5">
+      <div class="loginForm  col-md-4">
       <form  action='/login' method='post'>
         <h2>Zaloguj się</h2>
         <FormGroup>
@@ -20,13 +20,9 @@ class Login extends React.Component{
           <Label for="password">Hasło</Label>
           <Input type="password" name="password" id="password" />
         </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" />{' '}
-            Zapamiętaj mnie
-          </Label>
-        </FormGroup>
-        <Button type='submit'>Zaloguj się</Button>
+        <div class='zaloguj '>
+        <Button  type='submit'>Zaloguj się</Button>
+      </div>
       </form>
     </div>
     )

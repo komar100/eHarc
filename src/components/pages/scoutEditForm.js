@@ -59,22 +59,22 @@ class ScoutEditForm extends React.Component {
                 <h2>Dane osobowe</h2>
               </div>
               <div class="form-group row">
-                  <label for="name" class="col-2 col-form-label">Imię</label>
-                  <div class="col-4">
+                  <label for="name" class="col-md-2 col-sm-10 col-form-label">Imię</label>
+                  <div class="col-md-4 col-ms-10">
                     <input class="form-control" type="text" ref="name" id="name" defaultValue={this.props.scouts.name}></input>
                   </div>
-                  <label for="surname" class="col-2 col-form-label" >Nazwisko</label>
-                  <div class="col-4">
+                  <label for="surname" class="col-md-2 col-sm-10 col-form-label" >Nazwisko</label>
+                  <div class="col-md-4 col-ms-10">
                     <input class="form-control" type="text" ref="surname" id="surname" defaultValue={this.props.scouts.surname}></input>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="pesel" class="col-2 col-form-label">Pesel</label>
-                  <div class="col-4">
+                  <label for="pesel" class="col-md-2 col-sm-10 col-form-label">Pesel</label>
+                  <div class="col-md-4 col-ms-10">
                     <input class="form-control" type="number" ref="pesel"  id="pesel" defaultValue={this.props.scouts.pesel}></input>
                   </div>
-                  <label for="dateOfBirth" class="col-2 col-form-label">Data urodzenia</label>
-                  <div class="col-4">
+                  <label for="dateOfBirth" class="col-2 col-sm-10 col-form-label">Data urodzenia</label>
+                  <div class="col-md-3 col-ms-10">
                     <input class="form-control" type="date" ref="dateOfBirth"  id="dateOfBirth" defaultValue={this.props.scouts.dateOfBirth}></input>
                   </div>
                 </div>
@@ -83,22 +83,22 @@ class ScoutEditForm extends React.Component {
             </div>
             <div class="form-group row adress">
 
-                <label for="street" class="col-2 col-form-label">Ulica</label>
-                <div class="col-4">
+                <label for="street" class="col-md-2 col-sm-10 col-form-label">Ulica</label>
+                <div class="col-md-4 col-ms-10">
                   <input class="form-control" type="text" ref="street"  id="street" defaultValue={this.props.scouts.street}></input>
                 </div>
-                <label for="number" class="col-2 col-form-label">Numer domu</label>
-                <div class="col-2">
+                <label for="number" class="col-md-2 col-sm-10 col-form-label">Numer domu</label>
+                <div class="col-md-4 col-ms-10">
                   <input class="form-control" type="number" ref="number" id="number" defaultValue={this.props.scouts.sNumber}></input>
                 </div>
               </div>
               <div class="form-group row adress">
-                <label for="code" class="col-2 col-form-label">Kod pocztowy</label>
-                <div class="col-4">
+                <label for="code" class="col-md-2 col-sm-102 col-form-label">Kod pocztowy</label>
+                <div class="col-md-4 col-ms-10">
                   <input class="form-control" type="text" ref="code"  id="code" defaultValue={this.props.scouts.code}></input>
                 </div>
-                <label for="city" class="col-2 col-form-label">Miasto</label>
-                <div class="col-4">
+                <label for="city" class="col-md-2 col-sm-10 col-form-label">Miasto</label>
+                <div class="col-md-4 col-ms-10">
                   <input class="form-control" type="text" ref="city"  id="city" defaultValue={this.props.scouts.city}></input>
                 </div>
               </div>
@@ -107,22 +107,22 @@ class ScoutEditForm extends React.Component {
               </div>
               <div class="form-group row ">
 
-                  <label for="tel" class="col-2 col-form-label">Telefon</label>
-                  <div class="col-4">
+                  <label for="tel" class="col-md-2 col-sm-10 col-form-label">Telefon</label>
+                  <div class="col-md-4 col-ms-10">
                     <input class="form-control" type="tel" ref="tel"  id="tel" defaultValue={this.props.scouts.telNumber}></input>
                   </div>
-                  <label for="parTel" class="col-2 col-form-label">Telefon rodzica</label>
-                  <div class="col-4">
+                  <label for="parTel" class="col-md-2 col-sm-102 col-form-label">Telefon rodzica</label>
+                  <div class="col-md-4 col-ms-10">
                     <input class="form-control" type="tel"  ref="partel" id="parTel" defaultValue={this.props.scouts.parentTel}></input>
                   </div>
                 </div>
                 <div class="form-group row ">
-                  <label for="mail" class="col-2 col-form-label">E-mail</label>
-                  <div class="col-4">
+                  <label for="mail" class="col-md-2 col-sm-10 col-form-label">E-mail</label>
+                  <div class="col-md-4 col-ms-10">
                     <input class="form-control" type="email"  ref="mail" id="mail" defaultValue={this.props.scouts.mail}></input>
                   </div>
-                  <label for="team" class="col-2 col-form-label">Załoga</label>
-                  <div class="col-4">
+                  <label for="team" class="col-md-2 col-sm-10 col-form-label">Załoga</label>
+                  <div class="col-md-4 col-ms-10">
                     <select class="form-control" id="team" ref="team" >
                       <option>Zuchy</option>
                       <option>Jungi</option>
@@ -132,7 +132,7 @@ class ScoutEditForm extends React.Component {
                   </div>
                 </div>
           </div>
-            <button onClick={this.handleSubmit.bind(this)} type="submit" class="btn btn-primary">Zapisz</button>
+            <button onClick={this.handleSubmit.bind(this)} type="submit" class=" zapisz btn btn-primary">Zapisz</button>
           </form>
         </div>
       </div>

@@ -83,24 +83,24 @@ class EventDetails extends React.Component {
     })
     return(
       <div class='container col-sm-12 col-md-10 col-lg-10 scouts_container'>
-        <div class='row'>
-        <h3>{this.props.events.name}</h3>
-        <h3>{this.props.events.place}</h3>
 
-        <Link to={'/eventEditForm/' + this.props.events._id}><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Edytuj dane</button></Link>
-        <form ref='uploadForm'
+        <h2>{this.props.events.name}</h2>
+        <h4>Miejsce: {this.props.events.place}</h4>
+        <h4>Czas trwania: {this.props.events.start} - {this.props.events.finish}</h4>
+
+        <Link to={'/eventEditForm/' + this.props.events._id}><button class="przycisk btn btn-primary my-2 my-sm-0" type="submit">Edytuj dane</button></Link>
+        {/* <form ref='uploadForm'
           id='uploadForm'
           action='/api/upload'
           method='post'
           encType="multipart/form-data">
         <input type="file" name="file" />
         <input type='submit' value='Dodaj!' />
-      </form>
+      </form> */}
 
-        </div>
         <div class='row'>
           <h3>Lista uczestników</h3>
-          <button class="btn btn-outline-success my-2 my-sm-0" onClick={this.openModal}>Dodaj uczestnika</button>
+          <button class="dodaj btn btn-primary my-2 my-sm-0" onClick={this.openModal}>Dodaj uczestnika</button>
         </div>
         <div class='row table-responsive'>
           <table class='table table-hover table-striped '>

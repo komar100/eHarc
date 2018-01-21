@@ -67,7 +67,7 @@ class EventScoutItem extends React.Component {
         <td>{this.props.scout.name}</td>
         <td>{this.props.scout.surname}</td>
         <td>{this.props.scout.team}</td>
-        <td><Button onClick={this.openModal}>Usuń</Button></td>
+        <td><button class='btn btn-danger my-2 my-sm-0' onClick={this.openModal}>Usuń</button></td>
 
 
 
@@ -81,8 +81,8 @@ class EventScoutItem extends React.Component {
 
           <h2 ref={subtitle => this.subtitle = subtitle}>Czy na pewno chcesz usunąc?</h2>
 
-          <Button onClick={this.handleSubmit.bind(this)}>Usuń</Button>
-          <Button onClick={this.closeModal}>Anuluj</Button>
+          <button class='btn btn-danger my-2 my-sm-0' onClick={this.handleSubmit.bind(this)}>Usuń</button>
+          <button class='btn btn-primary my-2 my-sm-0' onClick={this.closeModal}>Anuluj</button>
         </Modal>
           </tr>
     )

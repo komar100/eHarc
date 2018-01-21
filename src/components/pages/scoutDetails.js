@@ -18,17 +18,26 @@ class ScoutDetails extends React.Component {
   render(){
     return(
       <div class='container col-sm-12 col-md-10 col-lg-10 scouts_container'>
+          <div class='row'>
+            <div class='col-md-5 col-sm-10'>
+              <h3>Dane osobowe</h3>
+              <p>Imię: {this.props.scouts.name}</p>
+              <p>Nazwisko: {this.props.scouts.surname}</p>
+              <p>Pesel: {this.props.scouts.pesel}</p>
+              <p>Data urodzenia: {this.props.scouts.dateOfBirth}</p>
+            </div>
+        <div class='col-md-5 col-sm-10'>
+            <h3>Adres zamieszkania</h3>
+            <p>Ul. {this.props.scouts.street} {this.props.scouts.sNumber}</p>
+            <p>{this.props.scouts.code} {this.props.scouts.city}</p>
+          </div>
+        </div>
+        <h3>Dane kontaktowe</h3>
+        <p>Telefon: {this.props.scouts.telNumber}</p>
+        <p>Telefon rodzica: {this.props.scouts.parentTel}</p>
+        <p>E-mail: {this.props.scouts.mail}</p>
 
-        <h3>{this.props.scouts.name}</h3>
-        <h3>{this.props.scouts.surname}</h3>
-        <h3>{this.props.scouts.street}</h3>
-        <h3>{this.props.scouts.sNumber}</h3>
-        <h3>{this.props.scouts.city}</h3>
-        <h3>{this.props.scouts.telNumber}</h3>
-        <h3>{this.props.scouts.parentTel}</h3>
-        <h3>{this.props.scouts.pesel}</h3>
-        <h3>{this.props.scouts.mail}</h3>
-        <Link to={'/scoutEditForm/' + this.props.scouts._id}><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Edytuj dane</button></Link>
+        <Link to={'/scoutEditForm/' + this.props.scouts._id}><button class="btn btn-primary my-2 my-sm-0" type="submit">Edytuj dane</button></Link>
       </div>
     )
   };
